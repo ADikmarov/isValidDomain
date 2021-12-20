@@ -1,7 +1,0 @@
-[
-  {
-    "path": "dist/index.js",
-    "import": "{ isValidDomain }",
-    "limit": "4500 ms"
-  }
-]
