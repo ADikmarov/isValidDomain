@@ -1,11 +1,18 @@
 import { expect, describe, it } from 'vitest'
 
-import { isValidDomain, domainList } from '../src/index'
+import { isValidDomain, isValidEmail, domainList } from '../src/index'
 
 describe('isValidDomain', () => {
   it('should check for an valid domain', () => {
-    for (const domain in domainList) {
-      expect(isValidDomain(domain), domain).toBe(false)
+    for (const domain of domainList) {
+      expect(isValidDomain(domain)).toBe(true)
+    }
+  })
+
+  it('should check for an valid email', () => {
+    const validEmails = ['hello@gmail.com', 'valid@mail.edu']
+    for (const email of validEmails) {
+      expect(isValidEmail(email)).toBe(true)
     }
   })
 
@@ -17,8 +24,15 @@ describe('isValidDomain', () => {
       'yetAnotherDomain',
     ]
 
-    for (const domain in invavidDomains) {
+    for (const domain of invavidDomains) {
       expect(isValidDomain(domain)).toBe(false)
+    }
+  })
+
+  it('should check for invalid email', () => {
+    const validEmails = ['hello@gmail.commm', 'valid@mail.eduuu']
+    for (const email of validEmails) {
+      expect(isValidEmail(email)).toBe(false)
     }
   })
 })

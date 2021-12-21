@@ -23,6 +23,10 @@ import { isValidDomain } from 'is-valid-domain-name';
 console.log(isValidDomain('com')); // true
 console.log(isValidDomain('commmmm')); // false
 
+import { isValidEmail } from 'is-valid-domain-name';
+
+console.log(isValidDomain('support@gmail.com')); // true
+console.log(isValidDomain('support@gmail.commmmm')); // false
 ```
 
 You can also get a list of domain names
